@@ -3,11 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer.component';
+import { InterpolationComponent } from './examples/interpolation.component';
+import { PropertyBindingComponent } from './examples/property-binding.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    InterpolationComponent,
+    PropertyBindingComponent
   ],
   imports: [
     BrowserModule
