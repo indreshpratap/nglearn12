@@ -1,0 +1,28 @@
+<h3>Events Example</h3>
+
+
+<button class="ibtn" (click)="sayHello()"> {{ sayHelloMsg }}</button>
+
+
+<div class="msg-box {{highClass}}" (mouseenter)="highlight()" (mouseleave)="clearHighlight()">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur fugit laborum eius officiis ratione quia
+    dolorem harum? Culpa distinctio tenetur esse sit vitae! Eos expedita dolore, obcaecati placeat quibusdam laudantium.
+</div>
+
+<button class="ibtn" (dblclick)="handleEvent($event,sayHelloMsg)">Double click</button>
+<button class="ibtn" (mouseenter)="handleEvent($event,'Mouse Enter')">Mouse enter with params</button>
+<button class="ibtn" (mouseleave)="handleEvent($event,'Mouse Leave')">Mouse leave with params</button>
+<button class="ibtn" (click)="handleEvent($event,'Click User')">With Event Object</button>
+
+
+<hr>
+<button class="ibtn error" (click)="setCurrentState('error')">Error</button>
+<button class="ibtn success" (click)="setCurrentState('success')">Success</button>
+<button class="ibtn success" (click)="setCurrentState('No-state')">No State</button>
+
+<b>Current State is : {{ state }}</b>
+<div class="msg-box ">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis mollitia, deleniti accusamus iusto adipisci
+    tempore, quae earum aliquid beatae deserunt, recusandae quibusdam cupiditate ullam quos id repellendus itaque
+    consequatur. Tempore!
+</div>

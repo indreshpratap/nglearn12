@@ -11,6 +11,9 @@ export class InterpolationComponent {
     count = 10; // number
     colors = ['Red', 'Green'];   //array
     info = { id: 10, qty: 20, product: 'Phone' }; // object
+
+    warning = 'error';
+    ok = 'success';
     constructor() {
 
         console.log(this.info.toString());

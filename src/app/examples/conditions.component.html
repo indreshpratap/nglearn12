@@ -1,0 +1,30 @@
+<h3>Condition Example</h3>
+
+<button class="ibtn" (click)="changeRole('admin')">Login as Admin</button>
+<button class="ibtn" (click)="changeRole('user')">Login as User</button>
+<button class="ibtn" (click)="changeRole('client')">Login as Client</button>
+<button class="ibtn" (click)="changeRole('')">Logout</button>
+
+<div *ngIf="role">
+    Welcome  {{role}}
+</div>
+
+
+
+
+<div class="msg-box success" *ngIf="role === 'admin'">
+    Your are an Admin you have more power
+</div>
+
+<div class="msg-box error" *ngIf="role ==='user'">
+    Your are a User, use is wisely..
+</div>
+
+<div class="msg-box" *ngIf="role==='admin' || role ==='user'">
+    You are either Admin or a User
+</div>
+
+
+<!-- if and else using revert of is statement -->
+<div *ngIf="isLoggedIn">You are a logged in user. :)</div>
+<div *ngIf="!isLoggedIn">Please Login here</div>

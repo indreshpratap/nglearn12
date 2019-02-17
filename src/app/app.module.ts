@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer.component';
 import { InterpolationComponent } from './examples/interpolation.component';
 import { PropertyBindingComponent } from './examples/property-binding.component';
+import { EventsComponent } from './examples/events.component';
+import { ConditionsComponent } from './examples/conditions.component';
 
 
 
@@ -13,7 +15,9 @@ import { PropertyBindingComponent } from './examples/property-binding.component'
     AppComponent,
     FooterComponent,
     InterpolationComponent,
-    PropertyBindingComponent
+    PropertyBindingComponent,
+    EventsComponent,
+    ConditionsComponent
   ],
   imports: [
     BrowserModule

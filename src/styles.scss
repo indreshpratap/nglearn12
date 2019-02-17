@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+.error {
+    color:red;
+
+}
+
+.success {
+    color:green;
+}
+
+.msg-box {
+    border:1px solid;
+    padding:15px;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    background:yellow;
+    color:black;
+}
+
+
+button.ibtn {
+    padding:5px;
+    border:1px solid lightblue;
+}
