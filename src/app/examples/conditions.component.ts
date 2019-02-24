@@ -8,6 +8,7 @@ export class ConditionsComponent {
 
     isLoggedIn = true;
     role = 'admin';
+    state = 1;
 
     changeRole(currentRole) {
         this.role = currentRole;
@@ -16,6 +17,19 @@ export class ConditionsComponent {
         } else {
             this.isLoggedIn = false;
         }
+    }
+
+
+    increment(){
+        ++this.state;
+    }
+
+    decrement(){
+        --this.state;
+    }
+
+    clear() {
+        this.state = 0;
     }
 
 

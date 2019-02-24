@@ -28,3 +28,17 @@
 <!-- if and else using revert of is statement -->
 <div *ngIf="isLoggedIn">You are a logged in user. :)</div>
 <div *ngIf="!isLoggedIn">Please Login here</div>
+<h5>Ng Switch</h5>
+
+
+<button (click)="increment()">Increment</button>
+<button (click)="decrement()">Decrement</button>
+<button (click)="clear()">Clear</button>
+<div [ngSwitch]="state">
+    <div *ngSwitchCase="1">Current state is 1</div>
+    <div *ngSwitchCase="7">Current state is 2</div>
+    <div *ngSwitchCase="3">Current state is 3</div>
+    <div *ngSwitchCase="4">Current state is 4</div>
+    <div *ngSwitchCase="5">Current state is 5</div>
+    <!-- <div *ngSwitchDefault>No State selected</div> -->
+</div>

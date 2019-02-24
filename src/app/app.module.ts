@@ -7,6 +7,7 @@ import { InterpolationComponent } from './examples/interpolation.component';
 import { PropertyBindingComponent } from './examples/property-binding.component';
 import { EventsComponent } from './examples/events.component';
 import { ConditionsComponent } from './examples/conditions.component';
+import { HeaderComponent } from './layout/header.component';
 
 
 
@@ -17,7 +18,8 @@ import { ConditionsComponent } from './examples/conditions.component';
     InterpolationComponent,
     PropertyBindingComponent,
     EventsComponent,
-    ConditionsComponent
+    ConditionsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule
