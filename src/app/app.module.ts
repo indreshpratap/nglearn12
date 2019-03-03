@@ -8,6 +8,7 @@ import { PropertyBindingComponent } from './examples/property-binding.component'
 import { EventsComponent } from './examples/events.component';
 import { ConditionsComponent } from './examples/conditions.component';
 import { HeaderComponent } from './layout/header.component';
+import { NgClassStyleComponent } from './examples/ng-class-style.component';
 
 
 
@@ -19,7 +20,8 @@ import { HeaderComponent } from './layout/header.component';
     PropertyBindingComponent,
     EventsComponent,
     ConditionsComponent,
-    HeaderComponent
+    HeaderComponent,
+    NgClassStyleComponent
   ],
   imports: [
     BrowserModule
