@@ -32,3 +32,32 @@ Starting from :
 16th Dec
 
 1 Leave
+
+
+https://stackblitz.com
+
+# Project Topics
+
+* Modules
+* Routing
+* Forms with validation
+* Role based system at least 2 roles
+* Api Integration
+* Life cycle hooks
+
+
+# Project Name: Leave management
+
+### For Admin
+* Create Leave types
+* Create Users and assigned balance leave
+* Update user
+* Approve reject leaves
+* Search user
+
+
+## For User
+* Update profile
+* Apply leave
+* View history
+* Dashboard

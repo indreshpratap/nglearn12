@@ -1,0 +1,39 @@
+<div class="box">
+    <h3 class="title is-4">NgFor Example</h3>
+    {{ listItems }}
+
+    <button (click)="addNew()" class="button is-small is-success">Add Item</button>
+    <ul>
+        <li style="margin-bottom: 1rem"
+            *ngFor="let item of listItems;let myindex = index;let even = even;let odd=odd; let frst = first;let last = last;">
+            {{myindex+1}} : {{ item}} Index: {{myindex}} Even: {{even}} Odd: {{odd}} First: {{frst}} Last: {{last}}
+            <button class="button is-small is-danger" (click)="removeRow(item,myindex)">Remove</button>
+        </li>
+    </ul>
+
+    <table class="table is-bordered">
+        <tbody>
+            <tr *ngFor="let ownobj of listItems2;let oind = index;">
+                <td>{{ oind+1 }}</td>
+                <td> {{ ownobj.id }}</td>
+                <td>{{ ownobj.name }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <input type="text" #todoInput>
+    <button class="button is-small is-primary" (click)="addTodo(todoInput)">Add Todo</button>
+
+    <table class="table is-bordered">
+        <tbody>
+            <tr *ngFor="let todo of todos;let todoIndx = index;">
+                <td>{{ todo }}</td>
+                <td>
+                    <button class="button is-small is-success" (click)="doneTodo(todoIndx)">Done</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
