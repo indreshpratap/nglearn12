@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-header',
-    // templateUrl: './header.component.html',
-    template:`<h1 class="title is-1"> Angular Learning 12</h1>
-    `
+    templateUrl: './header.component.html',
+    styles: [``]
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+    constructor() { }
 
+    ngOnInit(): void { }
 }

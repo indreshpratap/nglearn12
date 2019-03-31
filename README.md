@@ -44,7 +44,7 @@ https://stackblitz.com
 * Role based system at least 2 roles
 * Api Integration
 * Life cycle hooks
-
+* Change title on url changes
 
 # Project Name: Leave management
 

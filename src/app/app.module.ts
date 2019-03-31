@@ -1,32 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer.component';
-import { InterpolationComponent } from './examples/interpolation.component';
-import { PropertyBindingComponent } from './examples/property-binding.component';
-import { EventsComponent } from './examples/events.component';
-import { ConditionsComponent } from './examples/conditions.component';
+import { HomeComponent } from './pages/home.component';
+import { AboutComponent } from './pages/about.component';
+import { appRouting } from './app.routing';
 import { HeaderComponent } from './layout/header.component';
-import { NgClassStyleComponent } from './examples/ng-class-style.component';
-import { NgForComponent } from './examples/ng-for.component';
+import { NotFoundComponent } from './pages/not-found.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    InterpolationComponent,
-    PropertyBindingComponent,
-    EventsComponent,
-    ConditionsComponent,
+    //layout
     HeaderComponent,
-    NgClassStyleComponent,
-    NgForComponent
+    //pages
+    HomeComponent,
+    AboutComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRouting)
   ],
   providers: [],
   bootstrap: [AppComponent]
