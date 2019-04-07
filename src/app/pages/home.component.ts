@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-home',
-    template: `this is home component`,
+    templateUrl: './home.component.html',
     styles: [``]
 })
 export class HomeComponent {

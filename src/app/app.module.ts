@@ -7,6 +7,8 @@ import { AboutComponent } from './pages/about.component';
 import { appRouting } from './app.routing';
 import { HeaderComponent } from './layout/header.component';
 import { NotFoundComponent } from './pages/not-found.component';
+import { LoginComponent } from './pages/login.component';
+import { ContactUsComponent } from './pages/contactus.component';
 
 
 
@@ -18,7 +20,9 @@ import { NotFoundComponent } from './pages/not-found.component';
     //pages
     HomeComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
