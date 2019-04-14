@@ -1,22 +1,64 @@
-<div>
-  <h2 class="title is-2">Login</h2>
-  <div class="field">
-    <label class="label">Name</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="Text input">
-    </div>
-  </div>
-  <div class="field">
-    <label class="label">Password</label>
-    <div class="control">
-      <input class="input" type="password" placeholder="Text input">
-    </div>
-  </div>
-  <div class="field is-grouped">
-    <div class="control">
-      <a class="button is-link" routerLink="home">Submit</a>
+<div class="columns ">
+  <div class="column is-4 is-offset-3">
+
+    <div class="card" style="margin-top:3rem">
+      <div class="card-header-title">
+        <h2 class="title is-4">Login</h2>
+      </div>
+      <div class="card-content">
+        <form #loginForm="ngForm">
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input [(ngModel)]="username" name="loginRef" required class="input" type="text" placeholder="Text input">
+              <div *ngIf="loginForm.controls['loginRef'] 
+              && loginForm.controls['loginRef'].touched
+              && loginForm.controls['loginRef'].errors">
+                <span *ngIf="loginForm.controls['loginRef'].errors.required">
+                  Username is required
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+              <input [(ngModel)]="password" name="loginPassword" required minlength="10" class="input" type="password"
+                placeholder="Text input">
+              <div *ngIf=" 
+              loginForm.controls['loginPassword']?.touched
+              && loginForm.controls['loginPassword']?.errors">
+                <span *ngIf="loginForm.controls['loginPassword'].errors.required">
+                  Password is required
+                </span>
+                <span *ngIf="loginForm.controls['loginPassword'].errors.minlength">
+                  Minimum length is 10
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <a class="button is-link" routerLink="home">Submit</a>
+              <button class="button is-success" (click)="doLogin(loginForm)">Login</button>
+
+
+             
+            </div>
+
+          </div>
+        </form>
+
+<pre>
+    Invalid : {{loginForm.invalid}}
+    Valid: {{loginForm.valid}}
+    Username Errors -
+    {{ loginForm?.controls['loginRef']?.errors | json }}
+    Password: 
+    {{ loginForm?.controls['loginPassword']?.errors | json }}
+</pre>
+      </div>
     </div>
 
   </div>
 </div>
-
