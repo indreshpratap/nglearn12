@@ -39,8 +39,8 @@ https://stackblitz.com
 # Project Topics
 
 * Modules
-* Routing
-* Forms with validation
+* Routing  - In progress
+* Forms with validation  - In progress
 * Role based system at least 2 roles
 * Api Integration
 * Life cycle hooks

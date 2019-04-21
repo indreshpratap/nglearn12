@@ -1,0 +1,15 @@
+Common:
+  ✔ Login Form @done(19-04-21 10:27)
+
+For Admin:
+  ☐ Create Leave types
+  ☐ Create Users and assigned balance leave
+  ☐ Update user
+  ☐ Approve reject leaves
+  ☐ Search user
+  
+For User:
+  ☐ Update profile
+  ☐ Apply leave
+  ☐ View history
+  ☐ Dashboard
