@@ -3,15 +3,14 @@ import { LeaveTypesManagerComponent } from './pages/leave-types-manager/leave-ty
 import { AdminComponent } from './pages/admin/admin.component';
 import { RouterModule } from '@angular/router';
 import { adminRoutes } from './admin.routing';
-import { CommonModule } from '@angular/common';
 import { AppSharedModule } from '../app-shared/app-shared.module';
-import { FormsModule } from '@angular/forms';
+import { ManageUserComponent } from './pages/manage-user/manage-user.component';
 
 @NgModule({
-    declarations: [LeaveTypesManagerComponent,AdminComponent],
+    declarations: [LeaveTypesManagerComponent,AdminComponent, ManageUserComponent],
     imports:[
     
-       AppSharedModule,
+         AppSharedModule,
         RouterModule.forChild(adminRoutes)
     ]
 })

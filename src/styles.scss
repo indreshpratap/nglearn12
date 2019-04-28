@@ -36,3 +36,9 @@ input.ng-invalid.ng-touched {
 input.ng-valid.ng-touched {
     border:1px solid green;
 }
+
+.txt-input {
+    padding:.4rem;
+    border:1px solid lightgray;
+    margin-right:5px;
+}

@@ -1,0 +1,36 @@
+<form [formGroup]="userForm">
+  <table style="width: 80%" class="table is-bordered is-striped">
+    <tbody>
+      <tr>
+        <th> First Name:</th>
+        <td> <input type="text" class="txt-input" formControlName="firstName"></td>
+        <th> Last Name:</th>
+        <td> <input type="text" class="txt-input" formControlName="lastName"></td>
+      </tr>
+
+      <tr>
+        <th>Username:</th>
+        <td><input type="text" class="txt-input" formControlName="username"></td>
+        <th>Gender:</th>
+        <td> <input type="radio" name="gender" value="Male" formControlName="gender"> Male
+          <input type="radio" name="gender" value="Female" formControlName="gender"> Female</td>
+      </tr>
+
+      <tr>
+        <td colspan="4" class="has-text-centered">
+          <button class="button is-primary" [disabled]="userForm.invalid">Save</button>
+          <button class="button" type="reset">Reset</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</form>
+
+
+<div>
+  Form Valid: {{ userForm.valid }}
+</div>
+
+{{userForm.value | json}}

@@ -1,29 +1,37 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" routerLink="/">
-       Leave Management
-      </a>
-    </div>
-  
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" routerLink="/home"> Home</a>
-        <a class="navbar-item" routerLink="/home/about">About</a>
-        <a class="navbar-item" routerLink="/home/contact-us">Contact Us</a>
-        <a class="navbar-item" routerLink="/admin/manage-leave-types">Admin Manage Leave</a>
+  <div class="navbar-brand">
+    <a class="navbar-item" routerLink="/">
+      Leave Management
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="/home"> Home</a>
+      <a class="navbar-item" routerLink="/home/about">About</a>
+      <a class="navbar-item" routerLink="/home/contact-us">Contact Us</a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">Admin</a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" routerLink="/admin/manage-leave-types">Manage Leave</a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" routerLink="/admin/manage-user">Manage Users</a>
+        </div>
       </div>
-  
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-small is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-small is-light">
-              Log in
-            </a>
-          </div>
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-small is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-small is-light">
+            Log in
+          </a>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>

@@ -2,7 +2,7 @@ Common:
   ✔ Login Form @done(19-04-21 10:27)
 
 For Admin:
-  ☐ Create Leave types
+  ✔ Create Leave types @done(19-04-28 10:59)
   ☐ Create Users and assigned balance leave
   ☐ Update user
   ☐ Approve reject leaves

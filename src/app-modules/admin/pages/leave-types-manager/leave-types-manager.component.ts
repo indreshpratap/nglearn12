@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-leave-types-manager',
@@ -7,10 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaveTypesManagerComponent implements OnInit {
 
-  typeName:string;
+  typeName:string = 'ABC';
+
+  @ViewChild("leaveMgrForm") leaveForm;
+
+  todos = [
+    {text:'abc',checked:false},
+    {text:'xyz',checked:false},
+    {text:'123',checked:false},
+]
   constructor() { }
 
   ngOnInit() {
   }
 
+  save(form){
+    // console.log(form.value);
+    console.log("A ViewChild Reference",this.leaveForm.value);
+    this.typeName= form.value.leaveName;
+  }
+
+  cancel(){
+
+  }
+
+
+  bulkAction(){
+    let selectedTodos = this.todos.filter(todo=> todo.checked);
+    console.log("Bulk action on:",selectedTodos);
+
+  }
 }
