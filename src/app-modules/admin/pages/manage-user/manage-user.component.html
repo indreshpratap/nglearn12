@@ -3,23 +3,49 @@
     <tbody>
       <tr>
         <th> First Name:</th>
-        <td> <input type="text" class="txt-input" formControlName="firstName"></td>
+        <td>
+          <input type="text" class="txt-input" formControlName="firstName">
+          <field-error [messages]="{required:'Please fill the first name',pattern:'Only characters are allowed'}"
+            [control]="userForm.get('firstName')"></field-error>
+        </td>
         <th> Last Name:</th>
-        <td> <input type="text" class="txt-input" formControlName="lastName"></td>
+        <td> <input type="text" class="txt-input" formControlName="lastName">
+          <field-error [control]="userForm.get('lastName')"></field-error>
+        </td>
       </tr>
 
       <tr>
         <th>Username:</th>
-        <td><input type="text" class="txt-input" formControlName="username"></td>
+        <td>
+          <input type="text" class="txt-input" formControlName="username">
+          <field-error [control]="userForm.get('username')"></field-error>
+        </td>
         <th>Gender:</th>
         <td> <input type="radio" name="gender" value="Male" formControlName="gender"> Male
           <input type="radio" name="gender" value="Female" formControlName="gender"> Female</td>
       </tr>
 
+
       <tr>
+        <th>Pincode:</th>
+        <td>
+          <input type="text" maxlength="6" placeholder="000000" class="txt-input" formControlName="pincode">
+          <field-error [control]="userForm.get('pincode')"></field-error>
+        </td>
+        <th>Mobile:</th>
+        <td>
+          <input placeholder="919999999999" maxlength="12" type="text" class="txt-input" formControlName="mobile">
+          <field-error [control]="userForm.get('mobile')"></field-error>
+        </td>
+      </tr>
+        <tr>
         <td colspan="4" class="has-text-centered">
           <button class="button is-primary" [disabled]="userForm.invalid">Save</button>
           <button class="button" type="reset">Reset</button>
+          <button class="button" type="button" (click)="userForm.disable()">Disable</button>
+          <button class="button" type="button" (click)="userForm.enable()">Enable</button>
+          <button class="button" type="button" (click)="userForm.get('username').enable()">Enable Username</button>
+          <button class="button" type="button" (click)="userForm.get('username').disable()">Disable Username</button>
         </td>
       </tr>
     </tbody>
@@ -34,3 +60,9 @@
 </div>
 
 {{userForm.value | json}}
+
+<div>
+  Get raw value of form
+  
+{{ userForm.getRawValue() | json }}
+</div>

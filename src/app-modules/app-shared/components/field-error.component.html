@@ -1,0 +1,14 @@
+<div class="errors" *ngIf="control && (control.touched || control.dirty) && control.errors">
+    <span *ngIf="control.errors['required']">
+        {{messages && messages['required'] ? messages['required'] : 'Field is required'}}</span>
+    <span *ngIf="control.errors['minlength']">Minimum length is {{ control.errors['minlength'].requiredLength }}</span>
+    <span *ngIf="control.errors['maxlength']">Maximum length is {{ control.errors['maxlength'].requiredLength }}</span>
+    <span *ngIf="control.errors['pattern']">
+        {{messages && messages['pattern'] ? messages['pattern'] : 'Not a valid value'}}</span>
+    <span *ngIf="control.errors['indianMobile']">
+        Mobile starts with 91 and only digits are allowed</span>
+    <span *ngIf="control.errors['pincode']">
+       Pincode is only 6 digits</span>
+
+    <!-- {{control.errors|json}} -->
+</div>
