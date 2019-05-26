@@ -10,6 +10,8 @@ import { LoginComponent } from './pages/login.component';
 import { ContactUsComponent } from './pages/contactus.component';
 import { AdminModule } from 'src/app-modules/admin/admin.module';
 import { AppSharedModule } from 'src/app-modules/app-shared/app-shared.module';
+import { UserService } from './providers/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,10 +27,11 @@ import { AppSharedModule } from 'src/app-modules/app-shared/app-shared.module';
   imports: [
     BrowserModule,
     AppSharedModule,
+    HttpClientModule,
     RouterModule.forRoot(appRouting),
     AdminModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

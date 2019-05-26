@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { UserService } from '../providers/user.service';
 
 @Component({
     selector: 'app-contact',
@@ -11,9 +12,11 @@ import { Title } from '@angular/platform-browser';
     // encapsulation:ViewEncapsulation.None
 })
 export class ContactUsComponent {
+    
 // dependency injection
-constructor(private title:Title){
-   title.setTitle("About page");
+constructor(private title:Title,
+    private userSvc: UserService ){
+   title.setTitle("About page "+ userSvc.getUserName());
 }
 
 }

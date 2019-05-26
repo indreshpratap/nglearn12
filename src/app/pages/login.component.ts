@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../providers/user.service';
 
 @Component({
     selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent {
     username: string = 'Test';
     password: string;
 
-    constructor() { }
+    constructor(private userService:UserService) { }
 
    
 
@@ -20,6 +21,8 @@ export class LoginComponent {
         
         console.log("password is : ", this.password);
         
+        this.userService
+        .doLogin({username:this.username, password:this.password});
         console.log(loginFrom);
         this.username = null;
         this.password = null;
