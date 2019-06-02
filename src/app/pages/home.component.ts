@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { UserService } from '../providers/user.service';
 
 @Component({
     selector: 'app-home',
@@ -9,8 +10,15 @@ import { Title } from '@angular/platform-browser';
 export class HomeComponent {
 
     // dependency injection
-    constructor(private title:Title){
+    constructor(private title:Title,
+        private userService:UserService){
         title.setTitle("Home page");
+        
+        setTimeout(() => {
+            userService.fetchUserDetails();
+            
+        }, 3000);
     }
+
 
 }

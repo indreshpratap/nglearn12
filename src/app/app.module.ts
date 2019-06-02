@@ -12,6 +12,7 @@ import { AdminModule } from 'src/app-modules/admin/admin.module';
 import { AppSharedModule } from 'src/app-modules/app-shared/app-shared.module';
 import { UserService } from './providers/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ObservableComponent } from './pages/observables.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     NotFoundComponent,
     LoginComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,
