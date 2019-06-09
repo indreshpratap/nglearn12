@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
+const mountRoutes = require('./modules/api.routes');
 
 app.use(bodyParser.json());
 
@@ -31,7 +32,11 @@ app.get('/user',(req,res)=>{
         role:'admin',
         email:'userone@gmail.com'
     });
-})
+});
+
+/* --------------------------- API Routes Binding --------------------------- */
+
+mountRoutes(app);
 
 app.listen(3000,()=>{
     console.log('Server is running at 3000');
