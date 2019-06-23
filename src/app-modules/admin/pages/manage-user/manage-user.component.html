@@ -1,68 +1,93 @@
-<form [formGroup]="userForm">
-  <table style="width: 80%" class="table is-bordered is-striped">
-    <tbody>
-      <tr>
-        <th> First Name:</th>
-        <td>
-          <input type="text" class="txt-input" formControlName="firstName">
-          <field-error [messages]="{required:'Please fill the first name',pattern:'Only characters are allowed'}"
-            [control]="userForm.get('firstName')"></field-error>
-        </td>
-        <th> Last Name:</th>
-        <td> <input type="text" class="txt-input" formControlName="lastName">
-          <field-error [control]="userForm.get('lastName')"></field-error>
-        </td>
-      </tr>
+<app-page title="Manage User">
+  <div page-content>
 
-      <tr>
-        <th>Username:</th>
-        <td>
-          <input type="text" class="txt-input" formControlName="username">
-          <field-error [control]="userForm.get('username')"></field-error>
-        </td>
-        <th>Gender:</th>
-        <td> <input type="radio" name="gender" value="Male" formControlName="gender"> Male
-          <input type="radio" name="gender" value="Female" formControlName="gender"> Female</td>
-      </tr>
+    <form [formGroup]="userForm">
+      <table style="width: 80%" class="table is-bordered is-striped">
+        <tbody>
+          <tr>
 
+            <th> First Name:</th>
+            <td>
+              <input type="text" class="txt-input" formControlName="firstName">
+              <field-error [messages]="{required:'Please fill the first name',pattern:'Only characters are allowed'}"
+                [control]="userForm.get('firstName')"></field-error>
+            </td>
+            <th> Last Name:</th>
+            <td> <input type="text" class="txt-input" formControlName="lastName">
+              <field-error [control]="userForm.get('lastName')"></field-error>
+            </td>
+          </tr>
 
-      <tr>
-        <th>Pincode:</th>
-        <td>
-          <input type="text" maxlength="6" placeholder="000000" class="txt-input" formControlName="pincode">
-          <field-error [control]="userForm.get('pincode')"></field-error>
-        </td>
-        <th>Mobile:</th>
-        <td>
-          <input placeholder="919999999999" maxlength="12" type="text" class="txt-input" formControlName="mobile">
-          <field-error [control]="userForm.get('mobile')"></field-error>
-        </td>
-      </tr>
-        <tr>
-        <td colspan="4" class="has-text-centered">
-          <button class="button is-primary" [disabled]="userForm.invalid">Save</button>
-          <button class="button" type="reset">Reset</button>
-          <button class="button" type="button" (click)="userForm.disable()">Disable</button>
-          <button class="button" type="button" (click)="userForm.enable()">Enable</button>
-          <button class="button" type="button" (click)="userForm.get('username').enable()">Enable Username</button>
-          <button class="button" type="button" (click)="userForm.get('username').disable()">Disable Username</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <tr>
+            <th>Username:</th>
+            <td>
+              <input type="text" class="txt-input" formControlName="username">
+              <field-error [control]="userForm.get('username')"></field-error>
+            </td>
+            <th>Gender:</th>
+            <td> <input type="radio" name="gender" value="Male" formControlName="gender"> Male
+              <input type="radio" name="gender" value="Female" formControlName="gender"> Female</td>
+          </tr>
 
 
-</form>
+          <tr>
+            <th>Pincode:</th>
+            <td>
+              <input type="text" maxlength="6" placeholder="000000" class="txt-input" formControlName="pincode">
+              <field-error [control]="userForm.get('pincode')"></field-error>
+            </td>
+            <th>Mobile:</th>
+            <td>
+              <input placeholder="919999999999" maxlength="12" type="text" class="txt-input" formControlName="mobile">
+              <field-error [control]="userForm.get('mobile')"></field-error>
+            </td>
+          </tr>
+          
+          <tr>
+            <th>Date of Birth:</th>
+            <td>
+              
+              <p-calendar [showIcon]="true" dateFormat="dd/mm/yy" formControlName='dateOfBirth' placeholder="Date of birth"></p-calendar>
+              <field-error [control]="userForm.get('dateOfBirth')"></field-error>
+            </td>
+            <th>Date Of Joining:</th>
+            <td>
+              <p-calendar dateFormat="dd/mm/yy" formControlName='joiningDate' placeholder="Joining Date"></p-calendar>
+             
+              <field-error [control]="userForm.get('joiningDate')"></field-error>
+            </td>
+          </tr>
+          
+          <tr>
+            <td colspan="4" class="has-text-centered">
+              <button class="button is-primary" [disabled]="userForm.invalid">Save</button>
+              <button class="button" type="reset">Reset</button>
+              <button class="button" type="button" (click)="userForm.disable()">Disable</button>
+              <button class="button" type="button" (click)="userForm.enable()">Enable</button>
+              <button class="button" type="button" (click)="userForm.get('username').enable()">Enable Username</button>
+              <button class="button" type="button" (click)="userForm.get('username').disable()">Disable
+                Username</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
 
-<div>
-  Form Valid: {{ userForm.valid }}
-</div>
+    </form>
 
-{{userForm.value | json}}
 
-<div>
-  Get raw value of form
-  
-{{ userForm.getRawValue() | json }}
-</div>
+    <div>
+      Form Valid: {{ userForm.valid }}
+    </div>
+
+    {{userForm.value | json}}
+
+    <div>
+      Get raw value of form
+
+      {{ userForm.getRawValue() | json }}
+    </div>
+  </div>
+  <div page-toolbar><button (click)="saveUser()">Save</button></div>
+
+</app-page>

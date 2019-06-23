@@ -9,7 +9,7 @@ import { ApiClient } from 'src/app/providers/api.client';
 export class LeaveTypesManagerComponent implements OnInit, DoCheck, OnDestroy {
 
   typeName: string = 'ABC';
-
+ leaves;
   @ViewChild("leaveMgrForm") leaveForm;
 
   todos = [
@@ -25,7 +25,7 @@ export class LeaveTypesManagerComponent implements OnInit, DoCheck, OnDestroy {
     console.log('Calling ngOnInit in leavetypesmanager component');
     this.api.get('admin/leaves').subscribe(res => {
       if (res.status) {
-        console.log('Data is', res.data)
+       this.leaves = res.data;
       }
 
 

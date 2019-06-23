@@ -1,0 +1,12 @@
+
+    <div class="card">
+        <div class="card-header">
+            <p class="card-header-title">{{title}}</p>
+            <div class="card-header-icon">
+               <ng-content select="[page-toolbar]"></ng-content>
+            </div>
+        </div>
+        <div class="card-content">
+            <ng-content select="[page-content]"></ng-content>
+        </div>
+    </div>

@@ -13,7 +13,7 @@ import { AppSharedModule } from 'src/app-modules/app-shared/app-shared.module';
 import { UserService } from './providers/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ObservableComponent } from './pages/observables.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { ObservableComponent } from './pages/observables.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppSharedModule,
     HttpClientModule,
     RouterModule.forRoot(appRouting),

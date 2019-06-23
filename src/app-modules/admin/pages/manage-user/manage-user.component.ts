@@ -20,8 +20,14 @@ export class ManageUserComponent {
       gender: new FormControl('Female', [Validators.required]),
       username: new FormControl(null,[Validators.required, Validators.minLength(6)]),
       pincode:new FormControl(null,[Validators.required, pinCode]),
-      mobile:new FormControl(null,[Validators.required, indianMobile]) 
+      mobile:new FormControl(null,[Validators.required, indianMobile]) ,
+      dateOfBirth:  new FormControl(null, [Validators.required]),
+      joiningDate:  new FormControl(null, [Validators.required]),
     });
+  }
+
+  saveUser(){
+    alert('alert save user ');
   }
 
 

@@ -5,10 +5,13 @@ import { UserService } from '../providers/user.service';
 @Component({
     selector: 'app-contact',
     template: `
-    <h2 class="title is-3">Contact Us</h2>
+    <app-page title="Contact Us">
+   <div page-content>
    <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium beatae quo deserunt esse delectus ratione quae nulla voluptate sint sunt illum molestiae iste, odit enim labore nihil. Quaerat, sint ea?</div>
    <button class="button btn-primary" (click)="logout()">Logout</button> 
    <button class="button" (click)="login()">Login Again</button> 
+   </div>
+   </app-page>
    `,
     styles: [`h2.title {color:red}`],
     // encapsulation:ViewEncapsulation.None

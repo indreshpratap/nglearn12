@@ -1,3 +1,5 @@
+<app-page title="Leave Manager">
+<div page-content="">
 <form #leaveMgrForm="ngForm">
   <div>
     <input class="txt-input" name="leaveName" type="text" placeholder="Leave type" [ngModel]="typeName">
@@ -12,6 +14,29 @@
   </div>
   
 </form>
+
+<div style="margin-top: 1rem;">
+  <table style="width:100%" class="table is-bordered is-striped">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Leave Name</th>
+        <th>Leave Category</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let leave of leaves;let index =index">
+        <td>{{index+1}}</td>
+        <td>{{leave.leaveName}}</td>
+        <td>{{leave.category}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</app-page>
 <!-- 
   <div>
     <button (click)="bulkAction()">Bulk Action</button>
