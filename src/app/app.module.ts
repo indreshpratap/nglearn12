@@ -11,9 +11,10 @@ import { ContactUsComponent } from './pages/contactus.component';
 import { AdminModule } from 'src/app-modules/admin/admin.module';
 import { AppSharedModule } from 'src/app-modules/app-shared/app-shared.module';
 import { UserService } from './providers/user.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ObservableComponent } from './pages/observables.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthInterceptor } from './intercepters/auth.intercepters';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     RouterModule.forRoot(appRouting),
     AdminModule
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+    // associating http interceptors for HttpClient 
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

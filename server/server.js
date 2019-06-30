@@ -20,10 +20,10 @@ app.get("/list",(req,res)=>{
     res.json({msg:"this is list items"});
 });
 
-app.post("/login",(req,res)=>{
-    console.log('Received ', req.body);
-    res.json(req.body);
-});
+// app.post("/login",(req,res)=>{
+//     console.log('Received ', req.body);
+//     res.json(req.body);
+// });
 
 
 app.get('/user',(req,res)=>{

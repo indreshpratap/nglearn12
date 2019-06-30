@@ -23,7 +23,7 @@
           <div class="field">
             <label class="label">Password</label>
             <div class="control">
-              <input [(ngModel)]="password" name="loginPassword" required minlength="10" class="input" type="password"
+              <input [(ngModel)]="password" name="loginPassword" required minlength="3" class="input" type="password"
                 placeholder="Text input">
               <div *ngIf=" 
               loginForm.controls['loginPassword']?.touched
@@ -39,7 +39,7 @@
           </div>
           <div class="field is-grouped">
             <div class="control">
-              <a class="button is-link" routerLink="home">Submit</a>
+              <!-- <a class="button is-link" routerLink="home">Submit</a> -->
               <button class="button is-success" (click)="doLogin(loginForm)">Login</button>
 
 

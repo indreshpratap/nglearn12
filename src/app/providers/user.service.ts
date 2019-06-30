@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ApiClient } from './api.client';
 
 // @Injectable({providedIn:'root'})
 @Injectable()
@@ -9,7 +10,7 @@ export class UserService {
 
     subject = new Subject();
     private user: any = {};
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private api: ApiClient) {
 
 
     }
@@ -27,7 +28,7 @@ export class UserService {
     }
 
 
-    logout(){
+    logout() {
         this.subject.next({});
     }
     getUserName() {
@@ -43,7 +44,7 @@ export class UserService {
     }
 
     doLogin(data) {
-        return this.http.post(this.apiUrl + "login", data)
+        return this.api.post("login", data)
 
     }
 
