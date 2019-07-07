@@ -25,14 +25,17 @@
     <div class="navbar-end">
       <div class="navbar-item">
         {{ user.name }}({{ user.role }})
-        <!-- <div class="buttons">
-          <a class="button is-small is-primary">
+         <div class="buttons">
+          <a class="button is-small is-primary" *ngIf="!user?.name">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-small is-light">
+          <a class="button is-small is-light" *ngIf="!user?.name">
             Log in
           </a>
-        </div> -->
+          <a class="button is-small is-light" (click)="logout()">
+            Logout
+          </a>
+        </div>
       </div>
     </div>
   </div>

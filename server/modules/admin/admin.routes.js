@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const db = require('../../dao');
-const { SEND } = require('../helper');
+const { SEND,NOT_OK } = require('../helper');
 
 module.exports = router;
 
@@ -28,7 +28,19 @@ router.get('/leaves', (req, res) => {
 
 router.post('/save-user', (req, res) => {
     let body = req.body;
-    SEND(res, null, body);
+    body.active  =true;
+    body.role = 'user';
+    body.created_at = new Date();
+    db.users.findOne({username: body.username},(err,row)=>{
+        if(!row || !row._id){
+            db.users.insert(body,(uerror, newuser)=>{
+                SEND(res,uerror,newuser);
+            });
+        }else {
+            NOT_OK(res,err,{error:"Username already exist!"});
+        }
+    })
+   
 });
 
 router.get('/users', (req, res) => {

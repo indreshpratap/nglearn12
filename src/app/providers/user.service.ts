@@ -29,6 +29,8 @@ export class UserService {
 
 
     logout() {
+        this.user = {};
+        localStorage.removeItem('token');
         this.subject.next({});
     }
     getUserName() {
@@ -52,5 +54,10 @@ export class UserService {
         return this.subject.asObservable();
     }
 
+    hasToken() {
+        return localStorage.getItem('token') !== null;
+    }
+
+    
 
 }

@@ -17,7 +17,7 @@ export class AuthInterceptor implements HttpInterceptor {
         let cloned = req.clone({
              setHeaders: { 
                  'Authorization': 'Bearer ' + token,
-                 'DEVICE_ID':'DEDSFSDdfdsfdssd'
+                 'DEVICE_ID':'DEDSFSDdfdsfdssd'/// a custom header we can send as much as we want
                 } 
             }
         )
@@ -25,7 +25,7 @@ export class AuthInterceptor implements HttpInterceptor {
             
             if(err instanceof HttpErrorResponse){
                 let httpError = (err as HttpErrorResponse);
-                if(httpError.status===403){
+                if(httpError.status===403 || httpError.status ===401){
                     this.router.navigate(['/']);
                 }
             }

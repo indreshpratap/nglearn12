@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild, DoCheck, OnDestroy } from '@angular/core';
 import { ApiClient } from 'src/app/providers/api.client';
+import { CanDeactivateComponent } from 'src/app/guards/candeactivate.comp';
 
 @Component({
   selector: 'app-leave-types-manager',
   templateUrl: './leave-types-manager.component.html',
   styleUrls: ['./leave-types-manager.component.scss']
 })
-export class LeaveTypesManagerComponent implements OnInit, DoCheck, OnDestroy {
+export class LeaveTypesManagerComponent extends CanDeactivateComponent implements OnInit, DoCheck, OnDestroy {
 
   typeName: string = 'ABC';
  leaves;
@@ -18,6 +19,7 @@ export class LeaveTypesManagerComponent implements OnInit, DoCheck, OnDestroy {
     { text: '123', checked: false },
   ]
   constructor(private api: ApiClient) {
+    super('Leave form data will be lost?');
     console.log('Calling constructor in leavetypesmanager component');
   }
 
@@ -27,8 +29,6 @@ export class LeaveTypesManagerComponent implements OnInit, DoCheck, OnDestroy {
       if (res.status) {
        this.leaves = res.data;
       }
-
-
     })
   }
 
@@ -57,6 +57,13 @@ export class LeaveTypesManagerComponent implements OnInit, DoCheck, OnDestroy {
 
   }
 
+canDeactivate(){
+  if(this.leaveForm.dirty){
+    return super.canDeactivate();
+  }else {
+    return true;
+  }
+}  
 
   bulkAction() {
     let selectedTodos = this.todos.filter(todo => todo.checked);
