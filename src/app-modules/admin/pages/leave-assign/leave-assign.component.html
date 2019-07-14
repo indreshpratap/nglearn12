@@ -1,0 +1,28 @@
+<app-page title="Assign Leave">
+  <div page-toolbar>
+    <button class="button is-small is-primary" [disabled]="form?.invalid" (click)="save()">Save</button>
+  </div>
+  <div page-content>
+    <form [formGroup]="form" *ngIf="form">
+    <table style="width: 80%" class="table is-bordered is-striped">
+      <tbody>
+        <tr>
+          <th>Select User:</th>
+          <td>
+              <p-dropdown placeholder="Select User" (onChange)="onUserSelect($event)" formControlName="user" [options]="users" [optionLabel]="'firstName'"></p-dropdown>
+          <p-dropdown placeholder="Select Month" [options]="months" formControlName="month" optionLabel="value"></p-dropdown>
+            </td>
+        </tr>
+        <ng-container formGroupName="leaves">
+        <tr *ngFor="let leave of leaves">
+          <th>{{leave.leaveName}} ({{leave.category}})</th>
+          <td><input class="leave_input" [formControlName]="leave._id" type="number"></td>
+        </tr>
+        </ng-container>
+      </tbody>
+    </table>
+</form>
+
+{{form?.value | json}}
+  </div>
+</app-page>

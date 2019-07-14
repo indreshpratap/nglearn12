@@ -4,6 +4,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { ManageUserComponent } from './pages/manage-user/manage-user.component';
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { DeactivateGuard } from 'src/app/guards/deactivate.guard';
+import { LeaveAssignComponent } from './pages/leave-assign/leave-assign.component';
 
 export const adminRoutes: Routes = [
     {
@@ -12,6 +13,7 @@ export const adminRoutes: Routes = [
         children: [
             { path: "manage-leave-types", component: LeaveTypesManagerComponent, canDeactivate: [DeactivateGuard] },
             { path: "manage-user", component: ManageUserComponent, canDeactivate: [DeactivateGuard] },
+            { path: "assign-leave", component: LeaveAssignComponent, canDeactivate: [DeactivateGuard] },
 
         ]
     }

@@ -6,7 +6,7 @@ import { ApiClient } from './api.client';
 // @Injectable({providedIn:'root'})
 @Injectable()
 export class UserService {
-    apiUrl = 'http://localhost:3000/';
+    apiUrl = '/api/';
 
     subject = new Subject();
     private user: any = {};

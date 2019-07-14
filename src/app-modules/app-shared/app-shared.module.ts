@@ -8,6 +8,8 @@ import { PageComponent } from './components/page/page.component';
 // primeng
 import { CalendarModule } from 'primeng/calendar';
 import {CheckboxModule} from 'primeng/checkbox';
+import {DropdownModule} from 'primeng/dropdown';
+
 
 @NgModule({
     declarations: [
@@ -23,6 +25,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 //  primeng modules
         CalendarModule,
         CheckboxModule,
+        DropdownModule
     ],
     exports: [
         //components
@@ -35,7 +38,8 @@ import {CheckboxModule} from 'primeng/checkbox';
         ReactiveFormsModule,
         //Prime ng modules
         CalendarModule,
-        CheckboxModule
+        CheckboxModule,
+        DropdownModule
     ],
     providers: [],
 })

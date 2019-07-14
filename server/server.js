@@ -6,7 +6,7 @@ const mountRoutes = require('./modules/api.routes');
 
 app.use(bodyParser.json());
 
-app.use(cors());
+// app.use(cors());
 
 app.get('/',(req,res)=>{
     res.send('Server is up and running...');
@@ -26,7 +26,7 @@ app.get("/list",(req,res)=>{
 // });
 
 
-app.get('/user',(req,res)=>{
+app.get('/api/user',(req,res)=>{
     res.json({
         name:"User one",
         role:'admin',
