@@ -38,6 +38,6 @@ app.get('/api/user',(req,res)=>{
 
 mountRoutes(app);
 
-app.listen(3000,()=>{
+app.listen(4011,()=>{
     console.log('Server is running at 3000');
 })
